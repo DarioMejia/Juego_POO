@@ -15,10 +15,10 @@ class luchador{
    }
   void move(){
     posicion.add(velocidad);
-    if ((posicion.y>width)||(posicion.y>0-tamano.y)){
+    if ((posicion.y>width-tamano.y)||(posicion.y>0)){
       velocidad.y =velocidad.y*-1;
     }
-    if ((keyPressed==true&& key=='0')){
+    if (keyPressed==true&& key=='0'){
       velocidad.y =velocidad.y*-1;
     }
   }
