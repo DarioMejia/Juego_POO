@@ -6,8 +6,8 @@ void setup(){
     kris_daga=loadImage("imagenes/daga.png");
     kris_hondadefuego=loadImage("imagenes/honda de fuego.png");
     PVector krisposi =new PVector(150,150);
-    PVector krisvel =new PVector(0,13);
-    PVector kristamano =new PVector(250/1.25,250/1.25);
+    PVector krisvel =new PVector(0,7);
+    PVector kristamano =new PVector(250/1.55,250/1.55);
     kris= new luchador("kris",kris_aspc,150,25,krisvel,krisposi, kristamano);
     size(1400,850);
     
@@ -18,8 +18,6 @@ public void draw(){
   kris.display();
   kris.vida();
   kris.recarga_de_energia();
-  if (keyPressed==true && key=='0'){
-   kris.cambiardirec();
-  }
+  
   
 }

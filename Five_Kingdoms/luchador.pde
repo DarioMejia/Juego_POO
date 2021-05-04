@@ -29,7 +29,7 @@ class luchador{
   void cambiardirec(){
     
      velocidad.y =velocidad.y*-1;
-    delay(100);
+    delay(50);
   }
   void recarga_de_energia(){
     noStroke();
