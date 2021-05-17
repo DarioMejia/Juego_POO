@@ -1,9 +1,8 @@
-void keyReleased(){
-    if (key == 'a'){
-      daga.tirar();
-  
+void keyReleased() {
+  if (key == 'a') {
+    daga.tirar();
   }
-    if (key == '0'){
-      kris.cambiardirec();
+  if (key == '0') {
+    kris.cambiardirec();
   }
 }
