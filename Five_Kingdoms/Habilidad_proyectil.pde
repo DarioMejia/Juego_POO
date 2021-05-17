@@ -7,6 +7,8 @@ class habilidad_proyectil extends habilidad{
  void tirar(){
    this.posicion.y = kris.posicion.y;
    this.posicion.x = kris.posicion.x;
+   kris.restarEnergia(costo);
+   
  }
  
  void move (){
