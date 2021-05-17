@@ -15,23 +15,15 @@ void setup(){
     PVector dagavel = new PVector(15,0);
     PVector dagatamano = new PVector(250/1.55, 250/1.55);
     PVector dagaposi = new PVector(0,0);
-    daga= new habilidad_proyectil ("daga", daga_aspc, 5, 3, dagavel, dagaposi, dagatamano);
-    
+    daga= new habilidad_proyectil ("daga", daga_aspc, 5, 1, dagavel, dagaposi, dagatamano);
     size(1400,850);
-    
 }
-int cont=0;
 public void draw(){
-    frameRate(60);
-    background(255);
+    background(0);
     kris.move();
     kris.display();
     kris.vida();
-    
     daga.move();
     daga.display();
-    cont = cont +1;
-    if(cont%50==0){
-    kris.sumarEnergia(1);
-    }
+  
 }

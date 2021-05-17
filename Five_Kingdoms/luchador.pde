@@ -46,30 +46,5 @@ class luchador{
   }
   void display(){
     image(this.aspecto, this.posicion.x, this.posicion.y, this.tamano.x, this.tamano.y);
-    stroke(100);
-      fill(#29B2D6);
-      rect(20,20,energia*10,10);
- 
   }
-  
-   
-    void sumarEnergia(int cant){
-      if(energia+cant<25){
-      energia = energia + cant;
-      }else if(energia+cant>25){
-        energia = 25;
-      }  
-    }
-    void restarEnergia(int cant){
-      
-      energia = energia - cant;
-    }
-   /* boolean comprobarEnergia(){
-      boolean comprobante;
-      
-     //return comprobante;
-    }*/
-    
-  
-  
 }
