@@ -15,6 +15,7 @@ void setup() {
 }
 
 void draw() {
+  frameRate(60);
   switch(generalPage) {
   case 0:
     mainMenu();
@@ -45,6 +46,7 @@ void setupMenu() {
 void gameMenu() {
   if (gameMenu == null) {
     gameMenu = new GameMenu();
+    gameMenu.runGameMenu(gameMenuPage);
   }
   gameMenu.runGameMenu(gameMenuPage);
 }

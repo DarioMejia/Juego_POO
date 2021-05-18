@@ -15,11 +15,52 @@ abstract class Skill {
     this.size = size;
   }
 
-  abstract void init();
+  void init() {
+    display();
+    move();
+  }
 
-  abstract void display();
+  void display() {
+    if (!(this.position.x > width - this.size.x/1.55)) {
+      image(this.aspect, position.x, position.y, this.size.x, this.size.y);
+    }
+  }
 
-  abstract void move();
 
-  abstract void shoot(Fighter fighter);
+
+  void move () {
+    this.position.x = this.position.x+this.movSpeed.x;
+  }
+
+  public PVector getMovSpeed() {
+    return movSpeed;
+  }
+
+  public void setMovSpeed(PVector movSpeed) {
+    this.movSpeed = movSpeed;
+  }
+
+  public PVector getPosition() {
+    return position;
+  }
+
+  public void setPosition(PVector position) {
+    this.position = position;
+  }
+
+  public PVector getSize() {
+    return size;
+  }
+
+  public void setSize(PVector size) {
+    this.size = size;
+  }
+
+  public int getEnergyCost() {
+    return energyCost;
+  }
+
+  public int getDamage() {
+    return damage;
+  }
 } 
