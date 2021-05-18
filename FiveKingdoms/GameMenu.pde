@@ -26,6 +26,9 @@ class GameMenu {
       mainMenuButton1.display();
       fighterRight.init();
       fighterLeft.init();
+      for (int i = 0; i < numBasicLeft; i++){
+        fighterRight.skills.get(i).init();
+      }
       break;
     }
   }
