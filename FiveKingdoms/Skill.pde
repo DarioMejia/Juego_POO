@@ -1,5 +1,5 @@
 abstract class Skill {
-  
+
   String name;
   int energyCost, damage;
   PImage aspect;
@@ -15,7 +15,11 @@ abstract class Skill {
     this.size = size;
   }
 
+  abstract void init();
+
   abstract void display();
 
   abstract void move();
+
+  abstract void shoot(Fighter fighter);
 } 

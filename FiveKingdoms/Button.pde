@@ -14,7 +14,7 @@ class Button {
   }
 
   void display() {
-    //Dibuja el botón
+    //Draws the button
     rectMode(CENTER);
     fill(isHovering? color(0, 0, 0) : color(105, 105, 105));
     stroke(0);
@@ -23,7 +23,7 @@ class Button {
     strokeWeight(4);
     rect(posX, posY, w, h);
 
-    //Dibuja el texto del botón
+    //Draws the text button
     textAlign(CENTER);
     textSize(txtSize);
     fill(255);
@@ -33,7 +33,7 @@ class Button {
       text(txt, posX, posY+7);
     }
   }
-  //Verifica si el cursor esta dentro del boton
+  //Checks if the mouse is inside the button
   boolean isInside() {
     return isHovering = mouseX > (posX-w/2)*width/width & mouseX < (posX+w/2)*width/width &
       mouseY > (posY-h/2)*height/height & mouseY < (posY+h/2)*height/height;

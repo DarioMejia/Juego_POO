@@ -45,7 +45,6 @@ void setupMenu() {
 void gameMenu() {
   if (gameMenu == null) {
     gameMenu = new GameMenu();
-    gameMenu.runGameMenu(gameMenuPage);
   }
   gameMenu.runGameMenu(gameMenuPage);
 }
@@ -76,5 +75,4 @@ void keyReleased() {
     gameMenu.keyReleasedGameMenu();
     break;
   }
-  print(key);
 }

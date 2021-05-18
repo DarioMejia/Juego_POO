@@ -1,7 +1,12 @@
 class BasicSkill extends Skill {
-  
+
   BasicSkill(String name, int damage, int energyCost, PVector movSpeed, PVector position, PVector size, PImage aspect) {
     super(name, damage, energyCost, movSpeed, position, size, aspect);
+  }
+
+  void init() {
+    display();
+    move();
   }
 
   void display() {
@@ -13,5 +18,10 @@ class BasicSkill extends Skill {
 
   void move() {
     this.position.x = this.position.x+this.movSpeed.x;
+  }
+
+  void shoot(Fighter fighter) {
+    this.position.y = fighter.position.y;
+    this.position.x = fighter.position.x;
   }
 }
