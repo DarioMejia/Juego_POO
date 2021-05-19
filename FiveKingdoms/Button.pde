@@ -1,36 +1,57 @@
 class Button {
-  
+
+  private boolean state;
+  ;
   boolean isHovering;
   String txt;
   float txtSize, posX, posY, w, h;
+  PImage aspect, aspectClicked;
 
-  Button(String txt, float txtSize, float posX, float posY, float w, float h) {
+  Button(String txt, float txtSize, float posX, float posY, float w, float h, PImage aspect, PImage aspectClicked) {
     this.txt= txt;
     this.txtSize= txtSize;
     this.posX= posX;
     this.posY= posY;
     this.w= w;
     this.h= h;
+    this.aspect = aspect;
+    this.aspectClicked = aspectClicked;
   }
 
   void display() {
     //Dibuja el botón
-    rectMode(CENTER);
-    fill(isHovering? color(0, 0, 0) : color(105, 105, 105));
-    stroke(0);
-
-
-    strokeWeight(4);
-    rect(posX, posY, w, h);
+    if (isHovering) {
+      //tint(138, 136, 136);
+    }
+    imageMode(CENTER);
+    if (state) {
+      image(aspectClicked, posX, posY);
+      state = false;
+    } else {
+      image(aspect, posX, posY);
+    }
+    imageMode(CORNER);
 
     //Dibuja el texto del botón
     textAlign(CENTER);
     textSize(txtSize);
     fill(255);
-    if (height>=720) {
-      text(txt, posX, posY+7/((0+height)/720));
+    if (height>=700) {
+      text(txt, posX, posY+7/((0+height)/700));
     } else {
       text(txt, posX, posY+7);
+    }
+  }
+
+  void mouseClickedButton() {
+    if (isHovering) {
+      this.state = true;
+      display();
+      if (generalPage < 2) {
+        generalPage ++;
+      } else {
+        generalPage = 0;
+      }
     }
   }
   //Verifica si el cursor esta dentro del boton

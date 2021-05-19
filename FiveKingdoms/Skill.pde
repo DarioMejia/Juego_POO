@@ -4,6 +4,7 @@ abstract class Skill {
   int energyCost, damage;
   PImage aspect;
   PVector movSpeed, position, size;
+  boolean notShow;
 
   Skill(String name, int damage, int energyCost, PVector movSpeed, PVector position, PVector size, PImage aspect) {
     this.name = name;
@@ -62,5 +63,12 @@ abstract class Skill {
 
   public int getDamage() {
     return damage;
+  }
+  
+    public void setNotShow() {
+  }
+  
+  public boolean getNotShow() {
+    return notShow;
   }
 } 

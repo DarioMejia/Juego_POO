@@ -1,5 +1,4 @@
 class GameMenu {
-  private int maxEnergy = 25;
   int energyFighterLeft, energyFighterRight;
   boolean location;
   Fighter fighterLeft, fighterRight;
@@ -12,15 +11,39 @@ class GameMenu {
     switch (gameMenuPage) {
     case 0:
       if (fighterLeft == null && fighterRight == null) {
-        fighterLeft = new Fighter ("kris", 150, 3, new PVector(0, 7), new PVector(50, height/2-250/1.55), new PVector(250/1.55, 250/1.55), krisAspect);
-        fighterRight = new Fighter ("kris", 150, 3, new PVector(0, 7), new PVector(1100, height/2-250/1.55), new PVector(250/1.55, 250/1.55), krisAspectRight, true);
+        fighterLeft = new Fighter ("kris", 150, 1, 0, new PVector(0, 7), new PVector(50, height/2-250/1.55), new PVector(250/1.55, 250/1.55), krisAspect);
+        fighterRight = new Fighter ("kris", 150, 1, 0, new PVector(0, 7), new PVector(1100, height/2-250/1.55), new PVector(250/1.55, 250/1.55), krisAspectRight, true);
         fighterLeft.setBasicSkill(new BasicSkill("daga", 5, 3, new PVector(20, 0), new PVector(0, 0), new PVector(250/1.55, 250/1.55), krisBasicDaga));
         fighterRight.setBasicSkill(new BasicSkill("daga", 5, 3, new PVector(-20, 0), new PVector(0, 0), new PVector(250/1.55, 250/1.55), krisBasicDagaRight));
       }
       mainMenuButton1.display();
       fighterRight.init();
       fighterLeft.init();
+      displayManna();
+      damageDone();
       break;
+    }
+  }
+
+  void displayManna() {
+    if (frameCount % 20 == 0) {
+      fighterLeft.addManna(1);
+      fighterRight.addManna(1);
+    }
+  }
+
+  void damageDone() {
+
+    for (Skill skill : fighterRight.skills) {
+      if (skill.getPosition().x > fighterLeft.getPosition().x - fighterLeft.getSize().x / 2 & skill.getPosition().x < fighterLeft.getPosition().x + fighterLeft.getSize().x / 2 &
+        skill.getPosition().y > fighterLeft.getPosition().y - fighterLeft.getSize().y / 2 & skill.getPosition().y < fighterLeft.getPosition().y + fighterLeft.getSize().y / 2) {
+        if (fighterLeft.getHealth() - skill.getDamage() > 0) {
+          fighterLeft.setHealth(fighterLeft.getHealth() - skill.getDamage());
+        }
+        skill.setNotShow();
+        skill.display();
+        println(fighterLeft.getHealth());
+      }
     }
   }
 

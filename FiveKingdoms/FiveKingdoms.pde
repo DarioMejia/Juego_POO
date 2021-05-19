@@ -57,22 +57,15 @@ void mouseMoved() {
 }
 
 void mouseClicked() {
-  if (mainMenuButton1.isHovering) {
-    if (colour==color(255, 255, 255)) {
-      colour= color(255, 0, 0);
-    } else {
-      colour= color(255, 255, 255);
-    }
-    if (generalPage < 2) {
-      generalPage ++;
-    } else {
-      generalPage = 0;
-    }
-  }
+  mainMenuButton1.mouseClickedButton();
 }
 
 void keyReleased() {
   switch (generalPage) {
+  case 0:
+    break;
+  case 1:
+    break;
   case 2:
     gameMenu.keyReleasedGameMenu();
     break;

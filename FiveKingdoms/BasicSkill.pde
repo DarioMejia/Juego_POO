@@ -1,8 +1,10 @@
 class BasicSkill extends Skill {
   Fighter fighter;
+  boolean notShow;
 
   BasicSkill(String name, int damage, int energyCost, PVector movSpeed, PVector position, PVector size, PImage aspect) {
     super(name, damage, energyCost, movSpeed, position, size, aspect);
+    notShow = false;
   }
 
   BasicSkill(Skill skill) {
@@ -13,9 +15,12 @@ class BasicSkill extends Skill {
     this.fighter = fighter;
   }
 
-  void display() {
+  void setNotShow() {
+    notShow = true;
+  }
 
-    if (this.position.x > width - this.size.x/1.55) {
+  void display() {
+     if (this.position.x > width - this.size.x/1.55 | notShow) {
     } else {
       image(this.aspect, this.position.x, this.position.y, this.size.x, this.size.y);
     }

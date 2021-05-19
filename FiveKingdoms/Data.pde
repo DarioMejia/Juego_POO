@@ -1,5 +1,5 @@
 public Button mainMenuButton1, mainMenuButton2;
-public PImage mouse, mainMenuBack, krisAspect, krisAspectRight, krisBasicDaga, krisBasicDagaRight;
+public PImage mouse, title, mainMenuBack, start, start2, krisAspect, krisAspectRight, krisBasicDaga, krisBasicDagaRight;
 public PImage[] gameMenuBack = new PImage[5];
 
 public class Data {
@@ -9,8 +9,11 @@ public class Data {
     cursor(mouse, mouseX, mouseY);
     
     //Data mainMenu
+    title = loadImage("imagenes/titulo.png");
     mainMenuBack = loadImage("imagenes/mainBack.png");
-    mainMenuButton1 = new Button("Hola", 20, width/2, height/2, 100, 50);
+    start = loadImage("imagenes/empezar.png");
+    start2 = loadImage("imagenes/empezar2.png");
+    mainMenuButton1 = new Button("Continuar", 20, width/2, height/2, 150, 250, start, start2);
     
     //Data setupMenu
     
