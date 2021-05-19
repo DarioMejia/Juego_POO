@@ -31,6 +31,7 @@ class Fighter implements FighterActions {
     BasicSkill tempSkill;
     for (int i = 0; i < basicSkillCapacity; i++) {
       tempSkill = new BasicSkill(skill);
+      tempSkill.setFighter(this);
       skills.add(tempSkill);
     }
   }
