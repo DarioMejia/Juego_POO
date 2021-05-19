@@ -17,6 +17,7 @@ abstract class Skill {
   }
 
   void init() {
+    notShow = false;
     display();
     move();
   }

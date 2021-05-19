@@ -19,7 +19,7 @@ class Fighter implements FighterActions {
     this.aspect = aspect;
     skills = new ArrayList<Skill>();
     numBasic = 0;
-    frameStart = 60;
+    frameStart = 120;
   }
 
 
@@ -116,9 +116,13 @@ class Fighter implements FighterActions {
   }
 
   void displayHealth() {
-    stroke(50);
+        stroke(50);
     fill(0);
-    rect(150, 10, 300, 15);
+    if (!location){
+      rect(0, 10, 300, 15);
+    } else {
+      rect(1000, 10, 300, 15);
+    }
     noStroke();
 
     for (int i = 1; i < health/2; i++) {
@@ -135,7 +139,11 @@ class Fighter implements FighterActions {
       } else if (i<health/2) {
         fill(verde1);
       }
-      rect (4 * i, 10, 3, 15);
+      if (!location){
+        rect (4 * i, 10, 3, 15);
+      } else {
+        rect (1300 + 4 * -i, 10, 3, 15);
+      }
     }
   }
 
@@ -155,7 +163,7 @@ class Fighter implements FighterActions {
   }
 
   void shootBasic() {
-    boolean a = (frameCount > frameStart + 120);
+    boolean a = (frameCount > frameStart + 60);
     if (a) {
       switch(numBasic) {
       case 0:
@@ -176,9 +184,6 @@ class Fighter implements FighterActions {
   }
 
   void shoot(int i) {
-    if (skills.get(i).getNotShow()) {
-      skills.get(i).setNotShow();
-    }
     PVector a = new PVector(0, 0);
     a.y = position.y;
     a.x = position.x;

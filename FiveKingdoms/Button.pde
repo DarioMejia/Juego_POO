@@ -1,7 +1,6 @@
 class Button {
 
   private boolean state;
-  ;
   boolean isHovering;
   String txt;
   float txtSize, posX, posY, w, h;
@@ -46,7 +45,7 @@ class Button {
   void mouseClickedButton() {
     if (isHovering) {
       this.state = true;
-      display();
+      this.display();
       if (generalPage < 2) {
         generalPage ++;
       } else {

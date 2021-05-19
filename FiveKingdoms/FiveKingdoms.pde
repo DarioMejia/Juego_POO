@@ -53,11 +53,31 @@ void gameMenu() {
 
 //Interactive methods
 void mouseMoved() {
-  mainMenuButton1.isInside();
+  switch(generalPage) {
+  case 0:
+    mainMenuButton1.isInside();
+    break;
+  case 1:
+    mainMenuButton2.isInside();
+    break;
+  case 2:
+    mainMenuButton2.isInside();
+    break;
+  }
 }
 
 void mouseClicked() {
-  mainMenuButton1.mouseClickedButton();
+  switch(generalPage) {
+  case 0:
+    mainMenuButton1.mouseClickedButton();
+    break;
+  case 1:
+    mainMenuButton2.mouseClickedButton();
+    break;
+  case 2:
+    mainMenuButton2.mouseClickedButton();
+    break;
+  }
 }
 
 void keyReleased() {

@@ -7,7 +7,7 @@ class SetupMenu {
     switch (setupMenuPage) {
     case 0:
       background(146, 178, 0);
-      mainMenuButton1.display();
+      mainMenuButton2.display();
       break;
     }
   }

@@ -13,12 +13,13 @@ public class Data {
     mainMenuBack = loadImage("imagenes/mainBack.png");
     start = loadImage("imagenes/empezar.png");
     start2 = loadImage("imagenes/empezar2.png");
-    mainMenuButton1 = new Button("Continuar", 20, width/2, height/2, 150, 250, start, start2);
+    mainMenuButton1 = new Button("", 20, width/2, height/2, 400, 250, title, title);
+    mainMenuButton2 = new Button("Continuar", 20, width/2, height/2, 150, 250, start, start2);
     
     //Data setupMenu
     
     //Data gameMenu
-    gameMenuBack[0] = loadImage("imagenes/gameBack1.jpg");
+    gameMenuBack[0] = loadImage("imagenes/gameBack1.png");
     krisAspect = loadImage("imagenes/kris.png");
     krisAspectRight = loadImage("imagenes/kris_p2.png");
     krisBasicDaga = loadImage("imagenes/kris_basico_daga.png");
