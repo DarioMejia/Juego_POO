@@ -11,10 +11,10 @@ class GameMenu {
     switch (gameMenuPage) {
     case 0:
       if (fighterLeft == null && fighterRight == null) {
-        fighterLeft = new Fighter ("kris", 150, 3, 0, new PVector(0, 7), new PVector(50, height/2-250/1.55), new PVector(250/1.55, 250/1.55), krisAspect);
-        fighterRight = new Fighter ("kris", 150, 3, 0, new PVector(0, 7), new PVector(1100, height/2-250/1.55), new PVector(250/1.55, 250/1.55), krisAspectRight, true);
-        fighterLeft.setBasicSkill(new BasicSkill("daga", 5, 1, new PVector(20, 0), new PVector(0, 0), new PVector(250/1.55, 250/1.55), krisBasicDaga));
-        fighterRight.setBasicSkill(new BasicSkill("daga", 5, 1, new PVector(-20, 0), new PVector(0, 0), new PVector(250/1.55, 250/1.55), krisBasicDagaRight));
+        fighterLeft = new Fighter ("kris", 150, 3, 0, new PVector(0, 10), new PVector(50, height/2-250/1.55), new PVector(250/1.55, 250/1.55), krisAspect);
+        fighterRight = new Fighter ("kris", 150, 3, 0, new PVector(0, 10), new PVector(1100, height/2-250/1.55), new PVector(250/1.55, 250/1.55), krisAspectRight, true);
+        fighterLeft.setBasicSkill(new BasicSkill("daga", 5, 1, new PVector(25, 0), new PVector(0, 0), new PVector(250/1.55, 250/1.55), krisBasicDaga));
+        fighterRight.setBasicSkill(new BasicSkill("daga", 5, 1, new PVector(-25, 0), new PVector(0, 0), new PVector(250/1.55, 250/1.55), krisBasicDagaRight));
       }
       mainMenuButton2.display();
       fighterRight.init();
@@ -26,7 +26,7 @@ class GameMenu {
   }
 
   void displayManna() {
-    if (frameCount % 10 == 0) {
+    if (frameCount % 30 == 0) {
       fighterLeft.addManna(1);
       fighterRight.addManna(1);
     }

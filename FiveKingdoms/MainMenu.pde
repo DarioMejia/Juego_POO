@@ -8,6 +8,7 @@ class MainMenu {
     case 0:
       image(mainMenuBack, 0, 0, width, height);
       mainMenuButton1.display();
+      
       break;
     }
   }

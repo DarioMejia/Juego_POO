@@ -1,5 +1,5 @@
 public Button mainMenuButton1, mainMenuButton2;
-public PImage mouse, title, mainMenuBack, start, start2, krisAspect, krisAspectRight, krisBasicDaga, krisBasicDagaRight;
+public PImage mouse, title, mainMenuBack, start, start2, krisAspect, krisAspectRight, krisBasicDaga, krisBasicDagaRight,name_kris,shield_Kris;
 public PImage[] gameMenuBack = new PImage[5];
 
 public class Data {
@@ -17,7 +17,8 @@ public class Data {
     mainMenuButton2 = new Button("Continuar", 20, width/2, height/2, 150, 250, start, start2);
     
     //Data setupMenu
-    
+    name_kris=loadImage("imagenes/name_kris.png");
+    shield_Kris=loadImage("imagenes/escudo.png");
     //Data gameMenu
     gameMenuBack[0] = loadImage("imagenes/gameBack1.png");
     krisAspect = loadImage("imagenes/kris.png");

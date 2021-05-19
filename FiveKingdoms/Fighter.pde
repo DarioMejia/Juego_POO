@@ -99,16 +99,15 @@ class Fighter implements FighterActions {
   }
 
   void displayMannaLevel() {
-    fill(#000000);
-    rect(position.x+20, 30, 310, 30);
-    fill(#000000);
-    rect(position.x+2*20, 30, 310, 30);
+    fill(255);
+    rect(position.x-25, 30, 196, 30);
 
     for (int i=1; i <= manna; i++) {
       stroke(100);
       fill(#29B2D6);
       if (location) {
-        rect(position.x+i*20-150, 30, 20, 30);
+        rect((position.x-i*20)+170, 30, 20, 30);
+        
       } else {
         rect(position.x+i*20-50, 30, 20, 30);
       }
