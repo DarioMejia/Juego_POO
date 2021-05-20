@@ -16,6 +16,8 @@ class SetupMenu {
       image(krisBasicDagaRight,1050,height/2-100,300,300);
       image(shield_Kris,30,height/2+60,150,150);
       image(shield_Kris,1120,height/2+60,150,150);
+      image(fire_wave_kris,-10,height/2+140,300,370);
+      image(fire_wave_kris_p2,1010,height/2+140,300,370);
       break;
     }
   }

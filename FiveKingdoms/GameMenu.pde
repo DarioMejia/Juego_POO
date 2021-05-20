@@ -20,8 +20,9 @@ class GameMenu {
       fighterRight.init();
       fighterLeft.init();
       displayManna();
-      damageDone();
+      damageDone();     
       break;
+     
     }
   }
 
@@ -45,6 +46,9 @@ class GameMenu {
           fighterLeft.setHealth(0);
         }
         println("L" + fighterLeft.getHealth());
+        if(fighterLeft.getHealth()<=0){
+          gameMenuPage = 2;
+        }
       }
     }
 
@@ -59,14 +63,18 @@ class GameMenu {
           fighterRight.setHealth(0);
         }
         println("R" + fighterRight.getHealth());
+        if(fighterRight.getHealth()<=0){
+          gameMenuPage = 1;
+        }
       }
     }
   }
 
   void keyReleasedGameMenu() {
-
-    if (gameMenuPage == 0) {
-
+    
+    switch (gameMenuPage) {
+  case 0:
+  
       switch (key) {
         //Player in the left side
       case 'a':
@@ -84,6 +92,22 @@ class GameMenu {
         fighterRight.shootBasic();
         break;
       }
+     break;
+  case 1:
+    gameMenuPage=0;
+  setupMenu.runSetupMenu(setupMenuPage);
+  
+  fighterRight.setHealth(150);
+  fighterLeft.setHealth(150);
+  
+     break;
+ case 2:
+ gameMenuPage=0;
+   setupMenu.runSetupMenu(setupMenuPage);
+   
+    fighterRight.setHealth(150);
+    fighterLeft.setHealth(150);
+   break;
     }
   }
 }
