@@ -83,18 +83,24 @@ void mouseClicked() {
         generalPage++;
       }
     }
+    
+    if (mainMenuButtons.get(1).isInside()) {
+      mainMenuPage = 1;
+    }
+    
+    if (mainMenuButtons.get(2).isInside()) {
+      mainMenuPage = 2;
+    }
 
     if (mainMenuButtons.get(3).isInside()) {
-      if (mainMenuPage < 2) {
-        mainMenuPage++;
-      }
+      mainMenuPage--;
     }
     break;
   case 1:
     for (Button button : setupMenuButtons) {
       button.mouseClickedButton();
     }
-    
+
     if (mainMenuButtons.get(0).isInside()) {
       if (generalPage < 3) {
         generalPage++;

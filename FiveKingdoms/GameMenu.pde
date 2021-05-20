@@ -20,7 +20,7 @@ class GameMenu {
       fighterRight.init();
       fighterLeft.init();
       displayManna();
-      damageDone();     
+      damageDone();
       break;
      
     }
