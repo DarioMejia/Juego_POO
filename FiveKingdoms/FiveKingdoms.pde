@@ -100,7 +100,6 @@ void mouseClicked() {
     for (Button button : setupMenuButtons) {
       button.mouseClickedButton();
     }
-
     if (mainMenuButtons.get(0).isInside()) {
       if (generalPage < 3) {
         generalPage++;
