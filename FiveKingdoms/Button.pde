@@ -19,15 +19,15 @@ class Button {
 
   void display() {
     //Dibuja el botón
-    if (isHovering) {
-      //tint(138, 136, 136);
-    }
     imageMode(CENTER);
-    if (state) {
-      image(aspectClicked, posX, posY);
-      state = false;
+    if (isHovering) {
+      image(aspectClicked, posX, posY, w, h);
     } else {
-      image(aspect, posX, posY);
+      image(aspect, posX, posY, w, h);
+    }
+    if (state) {
+      image(aspectClicked, posX, posY, w, h);
+      state = false;
     }
     imageMode(CORNER);
 
@@ -46,11 +46,6 @@ class Button {
     if (isHovering) {
       this.state = true;
       this.display();
-      if (generalPage < 2) {
-        generalPage ++;
-      } else {
-        generalPage = 0;
-      }
     }
   }
   //Verifica si el cursor esta dentro del boton

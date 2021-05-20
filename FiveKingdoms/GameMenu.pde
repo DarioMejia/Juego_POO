@@ -11,12 +11,12 @@ class GameMenu {
     switch (gameMenuPage) {
     case 0:
       if (fighterLeft == null && fighterRight == null) {
-        fighterLeft = new Fighter ("kris", 150, 3, 0, new PVector(0, 10), new PVector(50, height/2-250/1.55), new PVector(250/1.55, 250/1.55), krisAspect);
+        fighterLeft = new Fighter ("kris", 150, 3, 0, new PVector(0, 10), new PVector(0, height/2-250/1.55), new PVector(250/1.55, 250/1.55), krisAspect);
         fighterRight = new Fighter ("kris", 150, 3, 0, new PVector(0, 10), new PVector(1100, height/2-250/1.55), new PVector(250/1.55, 250/1.55), krisAspectRight, true);
         fighterLeft.setBasicSkill(new BasicSkill("daga", 5, 1, new PVector(25, 0), new PVector(0, 0), new PVector(250/1.55, 250/1.55), krisBasicDaga));
         fighterRight.setBasicSkill(new BasicSkill("daga", 5, 1, new PVector(-25, 0), new PVector(0, 0), new PVector(250/1.55, 250/1.55), krisBasicDagaRight));
       }
-      mainMenuButton2.display();
+      
       fighterRight.init();
       fighterLeft.init();
       displayManna();
@@ -39,7 +39,6 @@ class GameMenu {
       if (skill.getPosition().x > fighterLeft.getPosition().x - fighterLeft.getSize().x / 2 & skill.getPosition().x < fighterLeft.getPosition().x + fighterLeft.getSize().x / 2 &
         skill.getPosition().y > fighterLeft.getPosition().y - fighterLeft.getSize().y / 2 & skill.getPosition().y < fighterLeft.getPosition().y + fighterLeft.getSize().y / 2) {
         skill.setNotShow();
-        skill.display();
         if ((fighterLeft.getHealth() - skill.getDamage()) > 0) {
           fighterLeft.setHealth(fighterLeft.getHealth() - skill.getDamage());
         } else {
@@ -56,7 +55,6 @@ class GameMenu {
       if (skill.getPosition().x > fighterRight.getPosition().x - fighterRight.getSize().x / 2 & skill.getPosition().x < fighterRight.getPosition().x + fighterRight.getSize().x / 2 &
         skill.getPosition().y > fighterRight.getPosition().y - fighterRight.getSize().y / 2 & skill.getPosition().y < fighterRight.getPosition().y + fighterRight.getSize().y / 2) {
         skill.setNotShow();
-        skill.display();
         if ((fighterRight.getHealth() - skill.getDamage()) > 0) {
           fighterRight.setHealth(fighterRight.getHealth() - skill.getDamage());
         } else {
@@ -96,17 +94,16 @@ class GameMenu {
   case 1:
     gameMenuPage=0;
   setupMenu.runSetupMenu(setupMenuPage);
+  fighterLeft = null;
+  fighterRight = null;
   
-  fighterRight.setHealth(150);
-  fighterLeft.setHealth(150);
   
      break;
  case 2:
  gameMenuPage=0;
    setupMenu.runSetupMenu(setupMenuPage);
-   
-    fighterRight.setHealth(150);
-    fighterLeft.setHealth(150);
+   fighterLeft = null;
+  fighterRight = null;
    break;
     }
   }

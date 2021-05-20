@@ -23,7 +23,10 @@ abstract class Skill {
   }
 
   void display() {
-    if (!(this.position.x > width - this.size.x/1.55)) {
+    if (!(this.position.x > width - (this.size.x/1.55)+50)) {
+      image(this.aspect, position.x, position.y, this.size.x, this.size.y);
+    }
+    if (!(this.position.x < 50)) {
       image(this.aspect, position.x, position.y, this.size.x, this.size.y);
     }
   }
