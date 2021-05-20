@@ -6,7 +6,6 @@ public int gameMenuPage = 0;
 MainMenu mainMenu;
 SetupMenu setupMenu;
 GameMenu gameMenu;
-color colour= color(255, 255, 255);
 
 void setup() {
   size(1300, 700);
@@ -15,7 +14,7 @@ void setup() {
 }
 
 void draw() {
-  frameRate(60);
+  frameRate(600);
   switch(generalPage) {
   case 0:
     mainMenu();
@@ -55,13 +54,19 @@ void gameMenu() {
 void mouseMoved() {
   switch(generalPage) {
   case 0:
-    mainMenuButton1.isInside();
+    for (Button button : mainMenuButtons) {
+      button.isInside();
+    }
     break;
   case 1:
-    mainMenuButton2.isInside();
+    for (Button button : setupMenuButtons) {
+      button.isInside();
+    }
     break;
   case 2:
-    mainMenuButton2.isInside();
+    for (Button button : gameMenuButtons) {
+      button.isInside();
+    }
     break;
   }
 }
@@ -69,13 +74,37 @@ void mouseMoved() {
 void mouseClicked() {
   switch(generalPage) {
   case 0:
-    mainMenuButton1.mouseClickedButton();
+    for (Button button : mainMenuButtons) {
+      button.mouseClickedButton();
+    }
+
+    if (mainMenuButtons.get(0).isInside()) {
+      if (generalPage < 3) {
+        generalPage++;
+      }
+    }
+
+    if (mainMenuButtons.get(3).isInside()) {
+      if (mainMenuPage < 2) {
+        mainMenuPage++;
+      }
+    }
     break;
   case 1:
-    mainMenuButton2.mouseClickedButton();
+    for (Button button : setupMenuButtons) {
+      button.mouseClickedButton();
+    }
+    
+    if (mainMenuButtons.get(0).isInside()) {
+      if (generalPage < 3) {
+        generalPage++;
+      }
+    }
     break;
   case 2:
-    mainMenuButton2.mouseClickedButton();
+    for (Button button : gameMenuButtons) {
+      button.mouseClickedButton();
+    }
     break;
   }
 }

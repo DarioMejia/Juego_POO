@@ -7,7 +7,7 @@ class SetupMenu {
     switch (setupMenuPage) {
     case 0:
       background(146, 178, 0);
-      mainMenuButton2.display();
+      setupMenuButtons.get(0).display();
       image(name_kris,60,-10,150,150);
       image(name_kris,1100,-10,150,150);
       image(krisAspect,0,height/2-250,300,300);
