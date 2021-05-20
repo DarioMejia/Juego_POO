@@ -13,6 +13,7 @@ class Fighter implements FighterActions {
     this.health = health;
     this.basicSkillCapacity = basicSkillCapacity;
     this.manna = manna;
+    this.manna =5;
     this.movSpeed = movSpeed;
     this.position = position;
     this.size = size;
@@ -100,16 +101,19 @@ class Fighter implements FighterActions {
 
   void displayMannaLevel() {
     fill(255);
-    rect(position.x-25, 30, 196, 30);
-
+    if (location) {
+    rect(position.x, 30, 196, 30);
+    }else{
+    rect(position.x+5, 30, 196, 30);
+    }
     for (int i=1; i <= manna; i++) {
       stroke(100);
       fill(#29B2D6);
       if (location) {
-        rect((position.x-i*20)+170, 30, 20, 30);
+        rect((position.x-i*20)+196, 30, 20, 30);
         
       } else {
-        rect(position.x+i*20-50, 30, 20, 30);
+        rect((position.x+i*20)-15, 30, 20, 30);
       }
     }
   }
@@ -181,7 +185,15 @@ class Fighter implements FighterActions {
       }
     }
   }
-
+void shootSpecial(int i) {
+    PVector a = new PVector(0, 0);
+    a.y = position.y;
+    a.x = position.x;
+    skills.get(i).setPosition(a);
+    restManna(skills.get(numBasic).getEnergyCost());
+      }
+    
+  
   void shoot(int i) {
     PVector a = new PVector(0, 0);
     a.y = position.y;
@@ -190,6 +202,7 @@ class Fighter implements FighterActions {
     restManna(skills.get(numBasic).getEnergyCost());
   }
 
-  void setSkill() {
+  void setSkill(Skill skill) {
+    skills.add(skill);
   }
 }

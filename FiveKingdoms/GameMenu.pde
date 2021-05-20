@@ -15,14 +15,14 @@ class GameMenu {
         fighterRight = new Fighter ("kris", 150, 3, 0, new PVector(0, 10), new PVector(1100, height/2-250/1.55), new PVector(250/1.55, 250/1.55), krisAspectRight, true);
         fighterLeft.setBasicSkill(new BasicSkill("daga", 5, 1, new PVector(25, 0), new PVector(0, 0), new PVector(250/1.55, 250/1.55), krisBasicDaga));
         fighterRight.setBasicSkill(new BasicSkill("daga", 5, 1, new PVector(-25, 0), new PVector(0, 0), new PVector(250/1.55, 250/1.55), krisBasicDagaRight));
+        fighterRight.setSkill(new SpecialSkill("onda de fuego", 15, 5, new PVector(35, 0), new PVector(0, 0), new PVector(250/1.55, 250/1.55), fire_wave_kris));
       }
-      
+
       fighterRight.init();
       fighterLeft.init();
       displayManna();
       damageDone();     
       break;
-     
     }
   }
 
@@ -45,7 +45,7 @@ class GameMenu {
           fighterLeft.setHealth(0);
         }
         println("L" + fighterLeft.getHealth());
-        if(fighterLeft.getHealth()<=0){
+        if (fighterLeft.getHealth()<=0) {
           gameMenuPage = 2;
         }
       }
@@ -61,7 +61,7 @@ class GameMenu {
           fighterRight.setHealth(0);
         }
         println("R" + fighterRight.getHealth());
-        if(fighterRight.getHealth()<=0){
+        if (fighterRight.getHealth()<=0) {
           gameMenuPage = 1;
         }
       }
@@ -69,10 +69,10 @@ class GameMenu {
   }
 
   void keyReleasedGameMenu() {
-    
+
     switch (gameMenuPage) {
-  case 0:
-  
+    case 0:
+
       switch (key) {
         //Player in the left side
       case 'a':
@@ -89,22 +89,25 @@ class GameMenu {
       case 'k':
         fighterRight.shootBasic();
         break;
+        case 'j':
+        fighterRight.shoot(3);
+        break;
       }
-     break;
-  case 1:
-    gameMenuPage=0;
-  setupMenu.runSetupMenu(setupMenuPage);
-  fighterLeft = null;
-  fighterRight = null;
-  
-  
-     break;
- case 2:
- gameMenuPage=0;
-   setupMenu.runSetupMenu(setupMenuPage);
-   fighterLeft = null;
-  fighterRight = null;
-   break;
+      break;
+    case 1:
+      gameMenuPage=0;
+      setupMenu.runSetupMenu(setupMenuPage);
+      fighterLeft = null;
+      fighterRight = null;
+
+
+      break;
+    case 2:
+      gameMenuPage=0;
+      setupMenu.runSetupMenu(setupMenuPage);
+      fighterLeft = null;
+      fighterRight = null;
+      break;
     }
   }
 }
