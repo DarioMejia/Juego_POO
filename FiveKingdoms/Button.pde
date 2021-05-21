@@ -22,11 +22,13 @@ class Button {
     imageMode(CENTER);
     if (isHovering) {
       image(aspectClicked, posX, posY, w, h);
+      cursor(HAND);
     } else {
       image(aspect, posX, posY, w, h);
     }
     if (state) {
       image(aspectClicked, posX, posY, w, h);
+      cursor(HAND);
       state = false;
     }
     imageMode(CORNER);
@@ -48,6 +50,7 @@ class Button {
       this.display();
     }
   }
+  
   //Verifica si el cursor esta dentro del boton
   boolean isInside() {
     return isHovering = mouseX > (posX-w/2)*width/width & mouseX < (posX+w/2)*width/width &

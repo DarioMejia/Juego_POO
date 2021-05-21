@@ -13,6 +13,7 @@ void setup() {
 }
 
 void draw() {
+  cursor(ARROW);
   //frameRate(60);
   switch(generalPage) {
   case 0:
@@ -56,6 +57,7 @@ void mouseMoved() {
     for (Button button : mainMenuButtons) {
       button.isInside();
     }
+    
     break;
   case 1:
     for (Button button : setupMenuButtons) {
@@ -78,9 +80,7 @@ void mouseClicked() {
     }
 
     if (mainMenuButtons.get(0).isInside()) {
-      if (generalPage < 3) {
-        generalPage++;
-      }
+      generalPage++;
     }
     
     if (mainMenuButtons.get(1).isInside()) {
@@ -99,6 +99,11 @@ void mouseClicked() {
     for (Button button : setupMenuButtons) {
       button.mouseClickedButton();
     }
+    
+    if (setupMenuButtons.get(0).isInside()) {
+      generalPage++;
+    }
+    
     if (mainMenuButtons.get(0).isInside()) {
       if (generalPage < 3) {
         generalPage++;

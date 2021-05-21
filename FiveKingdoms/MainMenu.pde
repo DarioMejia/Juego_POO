@@ -10,13 +10,13 @@ class MainMenu {
   void runMainMenu(int mainMenuPage) {
     switch (mainMenuPage) {
     case 0:
-      image(mainMenuBack, 0, 0, width, height);
+      image(mainMenuBackground, 0, 0, width, height);
       for (int i = 0; i <= 2; i++) {
         mainMenuButtons.get(i).display();
       }
       break;
     case 1:
-      image(instruccionesFondo, 0, 0, width, height);
+      image(instructionsBackground, 300, 100, 700, 500);
       mainMenuButtons.get(3).display();
       break;
     case 2:
@@ -45,7 +45,7 @@ class MainMenu {
     translate(0, height);
     textSize(80);
     text(crawl, 300, textY, -800, 3100);
-    textY -= 2;
+    textY -= 1;
   }
 
   class Star {
