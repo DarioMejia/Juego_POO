@@ -207,17 +207,28 @@ class Fighter implements FighterActions {
     }
   }
   void shootSpecial(PImage b) {
+    
     boolean a = (frameCount > frameStart + 60);
     if (a) {
       if(numBasic== 0) {
-        Specialgetsbetter(1);
+        Specialgetsbetter(b);
         numBasic = 0;
         frameStart = frameCount ;
       }
     }
   }
-  void Specialgetsbetter(int i) {
-    
+  void Specialgetsbetter(PImage b) {
+    PImage aux;
+    aux = getAspecFighter();
+    boolean a = (frameCount > frameStart+60 );
+    if(a){
+        setAspcerFighter(b);
+        numBasic = 1;
+        frameStart = frameCount ;
+      }else{
+      setAspcerFighter(aux);
+    }
+    restManna(skills.get(4).getEnergyCost());
   }
   
 void shootSpecial(int i) {

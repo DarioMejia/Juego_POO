@@ -11,14 +11,14 @@ class GameMenu {
     switch (gameMenuPage) {
     case 0:
       if (fighterLeft == null && fighterRight == null) {
-        fighterLeft = new Fighter ("kris", 150, 3, 0, new PVector(0, 10), new PVector(0, height/2-250/1.55), new PVector(250/1.55, 250/1.55), krisAspect);
-        fighterRight = new Fighter ("kris", 150, 3, 0, new PVector(0, 10), new PVector(1100, height/2-250/1.55), new PVector(250/1.55, 250/1.55), krisAspectRight, true);
-        fighterLeft.setBasicSkill(new BasicSkill("daga", 5, 1, new PVector(25, 0), new PVector(1000, 1000), new PVector(250/1.55, 250/1.55), krisBasicDaga));
-        fighterRight.setBasicSkill(new BasicSkill("daga", 5, 1, new PVector(-25, 0), new PVector(1000, 1000), new PVector(250/1.55, 250/1.55), krisBasicDagaRight));
-        fighterLeft.setSkill(new SpecialSkill("onda de fuego", 15, 5, new PVector(35, 0), new PVector(1000, 1000), new PVector(350/1.55, 650/1.55), fire_wave_kris));
-        fighterRight.setSkill(new SpecialSkill("onda de fuego", 15, 5, new PVector(-35, 0), new PVector(1000, 1000), new PVector(350/1.55, 650/1.55), fire_wave_kris_p2));
-        fighterLeft.setSkill(new SpecialSkill("escudo", 0, 4, new PVector(0, 0), new PVector(1000, 1000), new PVector(250/1.55, 250/1.55),  kris_with_shield));
-        fighterRight.setSkill(new SpecialSkill("escudo", 0, 4, new PVector(0, 0), new PVector(1000, 1000), new PVector(250/1.55, 250/1.55),  kris_with_shield_p2));
+        fighterLeft = new Fighter ("kris", 150, 3, 0, new PVector(0, 10), new PVector(0, height/2-250/1.55), new PVector(250/1.55, 250/1.55), fighter1);
+        fighterRight = new Fighter ("kris", 150, 3, 0, new PVector(0, 10), new PVector(1100, height/2-250/1.55), new PVector(250/1.55, 250/1.55), fighter12, true);
+        fighterLeft.setBasicSkill(new BasicSkill("daga", 5, 1, new PVector(25, 0), new PVector(1000, 1000), new PVector(250/1.55, 250/1.55), fighter1Basic));
+        fighterRight.setBasicSkill(new BasicSkill("daga", 5, 1, new PVector(-25, 0), new PVector(1000, 1000), new PVector(250/1.55, 250/1.55), fighter12Basic));
+        fighterLeft.setSkill(new SpecialSkill("onda de fuego", 15, 5, new PVector(35, 0), new PVector(1000, 1000), new PVector(350/1.55, 650/1.55), fighter1Special1));
+        fighterRight.setSkill(new SpecialSkill("onda de fuego", 15, 5, new PVector(-35, 0), new PVector(1000, 1000), new PVector(350/1.55, 650/1.55), fighter12Special1));
+        fighterLeft.setSkill(new SpecialSkill("escudo", 0, 4, new PVector(0, 0), new PVector(1000, 1000), new PVector(250/1.55, 250/1.55),  fighter1Special2));
+        fighterRight.setSkill(new SpecialSkill("escudo", 0, 4, new PVector(0, 0), new PVector(1000, 1000), new PVector(250/1.55, 250/1.55),  fighter12Special2));
       }
 
       fighterRight.init();
@@ -117,7 +117,7 @@ class GameMenu {
         break;
         case 'j':
         if(fighterRight.skills.get(4).getEnergyCost()<fighterRight.getManna()+1){
-        //fighterRight.shootSpecial(true);
+        fighterRight.shootSpecial(fighterRight.skills.get(4).getAspect());
         }
 
         break;
