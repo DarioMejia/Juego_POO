@@ -1,5 +1,5 @@
 public ArrayList<Button> mainMenuButtons, setupMenuButtons, gameMenuButtons;
-public PImage mouse, title, title2, returnButton, returnButton2, instructions, instructions2, credits, credits2, mainMenuBackground, instructionsBackground, setupMenuBackground, start, start2, optionsBackground, options, options2, restart, restart2, reset, reset2, winnerPlayerLeft, winnerPlayerRight, fighter1, fighter1Name, fighter1Basic, fighter1Special1, fighter1Special2, shield, fighter1Animation, fighter12, fighter12Basic, fighter12Special1, fighter12Special2, fighter12Animation, fighter2, fighter2Name, fighter2Basic, fighter2Special1, fighter2Special2, fighter2Animation, fighter22, fighter22Basic, fighter22Special1, fighter22Special2, fighter22Animation, fighter3, fighter3Name, fighter3Basic, fighter3Special1, fighter3Special2, fighter3Animation, fighter32, fighter32Basic, fighter32Special1, fighter32Special2, fighter32Animation;
+public PImage mouse, title, title2, returnButton, returnButton2, instructions, instructions2, credits, credits2, mainMenuBackground, instructionsBackground, setupMenuBackground, start, start2, fight, optionsBackground, options, options2, restart, restart2, reset, reset2, winnerPlayerLeft, winnerPlayerRight, fighter1, fighter1Name, fighter1Basic, fighter1Special1, fighter1Special2, shield, fighter1Animation, fighter12, fighter12Basic, fighter12Special1, fighter12Special2, fighter12Animation, fighter2, fighter2Name, fighter2Basic, fighter2Special1, fighter2Special2, fighter2Animation, fighter22, fighter22Basic, fighter22Special1, fighter22Special2, fighter22Animation, fighter3, fighter3Name, fighter3Basic, fighter3Special1, fighter3Special2, fighter3Animation, fighter32, fighter32Basic, fighter32Special1, fighter32Special2, fighter32Animation;
 public PImage[] gameMenuBackground = new PImage[5];
 
 public class Data {
@@ -29,6 +29,7 @@ public class Data {
     setupMenuBackground = loadImage("data/background2.png");
     optionsBackground = loadImage("data/background33.png");
     shield = loadImage("data/shield.png");
+    fight = loadImage("data/fight.png");
     setupMenuButtons = new ArrayList<Button>();
     setupMenuButtons.add(new Button("", 20, 1240, height-65, 100, 110, start, start2));
     setupMenuButtons.add(new Button("", 20, 65, height-35, 75, 50, returnButton, returnButton2));
