@@ -1,5 +1,5 @@
 public ArrayList<Button> mainMenuButtons, setupMenuButtons, gameMenuButtons;
-public PImage mouse, title, title2, returnButton, returnButton2, instructions, instructions2, credits, credits2, mainMenuBackground, instructionsBackground, setupMenuBackground, start, start2, optionsBackground, options, options2, restart, restart2, reset, reset2, fighter1, fighter1Name, fighter1Basic, fighter1Special1, fighter1Special2, shield, fighter1Animation, fighter12, fighter12Basic, fighter12Special1, fighter12Special2, fighter12Animation, fighter2, fighter2Name, fighter2Basic, fighter2Special1, fighter2Special2, fighter2Animation, fighter22, fighter22Basic, fighter22Special1, fighter22Special2, fighter22Animation, fighter3, fighter3Name, fighter3Basic, fighter3Special1, fighter3Special2, fighter3Animation, fighter32, fighter32Basic, fighter32Special1, fighter32Special2, fighter32Animation;
+public PImage mouse, title, title2, returnButton, returnButton2, instructions, instructions2, credits, credits2, mainMenuBackground, instructionsBackground, setupMenuBackground, start, start2, optionsBackground, options, options2, restart, restart2, reset, reset2, winnerPlayerLeft, winnerPlayerRight, fighter1, fighter1Name, fighter1Basic, fighter1Special1, fighter1Special2, shield, fighter1Animation, fighter12, fighter12Basic, fighter12Special1, fighter12Special2, fighter12Animation, fighter2, fighter2Name, fighter2Basic, fighter2Special1, fighter2Special2, fighter2Animation, fighter22, fighter22Basic, fighter22Special1, fighter22Special2, fighter22Animation, fighter3, fighter3Name, fighter3Basic, fighter3Special1, fighter3Special2, fighter3Animation, fighter32, fighter32Basic, fighter32Special1, fighter32Special2, fighter32Animation;
 public PImage[] gameMenuBackground = new PImage[5];
 
 public class Data {
@@ -40,6 +40,8 @@ public class Data {
     restart2 = loadImage("data/restart2.png");
     reset = loadImage("data/reset.png");
     reset2 = loadImage("data/reset2.png");
+    winnerPlayerLeft = loadImage("data/winner_playerLeft.png");
+    winnerPlayerRight = loadImage("data/winner_playerRight.png");
     gameMenuButtons = new ArrayList<Button>();
     gameMenuButtons.add(new Button("", 20, 1260, height-40, 85, 85, options, options2));
     gameMenuButtons.add(new Button("", 20, 395, 480, 85, 60, returnButton, returnButton2));

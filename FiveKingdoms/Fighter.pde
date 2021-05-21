@@ -208,17 +208,28 @@ class Fighter implements FighterActions {
       }
     }
   }
-  void shootSpecial(PImage b) {
+  void shootSpecial(PImage aspect) {
     boolean a = (frameCount > frameStart + 60);
     if (a) {
       if (numBasic== 0) {
-        upgrade(1);
+        upgrade(aspect);
         numBasic = 0;
         frameStart = frameCount ;
       }
     }
   }
-  void upgrade(int i) {
+  void upgrade(PImage aspect) {
+    PImage aux;
+    aux = this.aspect;
+    boolean a = (frameCount > frameStart+60 );
+    if (a) {
+      this.aspect = aspect;
+      numBasic = 1;
+      frameStart = frameCount ;
+    } else {
+      this.aspect = aux;;
+    }
+    restManna(skills.get(4).getEnergyCost());
   }
 
   void shootSpecial(int i) {
