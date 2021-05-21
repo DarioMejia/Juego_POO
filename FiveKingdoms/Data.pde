@@ -1,5 +1,5 @@
 public ArrayList<Button> mainMenuButtons, setupMenuButtons, gameMenuButtons;
-public PImage mouse, title, mainMenuBack, start, start2, instrucciones, instrucciones2, creditos, creditos2, retroceder, retroceder2, krisAspect, krisAspectRight, krisBasicDaga, krisBasicDagaRight, name_kris, shield_Kris,fire_wave_kris_p2,fire_wave_kris,vs;
+public PImage mouse, title, mainMenuBack, start, start2, instrucciones, instrucciones2, creditos, creditos2, retroceder, retroceder2, krisAspect, krisAspectRight, krisBasicDaga, krisBasicDagaRight, name_kris, shield_Kris,fire_wave_kris_p2,fire_wave_kris,vs,kris_with_shield,kris_with_shield_p2;
 public PImage[] gameMenuBack = new PImage[5];
 
 public class Data {
@@ -33,6 +33,8 @@ public class Data {
     setupMenuButtons.add(new Button("", 20, width/2, height/2, 150, 250, start, start2));
     fire_wave_kris=loadImage("data/ondadefuego.png");
     fire_wave_kris_p2=loadImage("data/ondadefuego_p2.png");
+    kris_with_shield=loadImage("data/kris_especial_escudo.png");
+    kris_with_shield_p2=loadImage("data/kris_especial_escudo_p2.png");
     
     //Data gameMenu
     gameMenuButtons = new ArrayList<Button>();
