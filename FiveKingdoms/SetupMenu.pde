@@ -6,7 +6,9 @@ class SetupMenu {
     switch (setupMenuPage) {
     case 0:
       image(setupMenuBackground, 0, 0, width, height);
-      setupMenuButtons.get(0).display();
+      for (int i = 0; i < 2; i++) {
+        setupMenuButtons.get(i).display();
+      }
       image(fighter1Name, 60, -10, 150, 150);
       image(fighter1Name, 1100, -10, 150, 150);
       image(fighter1, 0, height/2-250, 150, 150);

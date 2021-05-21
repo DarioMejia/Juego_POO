@@ -20,13 +20,11 @@ class BasicSkill extends Skill {
   }
 
   void display() {
-     if (((this.position.x > width - this.size.x/1.55)||(this.position.x < -50 )) | notShow) {
-       notShow = false;
-       
+    if (((this.position.x > width - this.size.x/1.55)||(this.position.x < -50 )) | notShow) {
+      notShow = false;
     } else {
       image(this.aspect, this.position.x, this.position.y, this.size.x, this.size.y);
     }
-
   }
 
   void move() {

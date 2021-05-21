@@ -1,6 +1,5 @@
 class Fighter implements FighterActions {
 
-  private int maxManna = 10;
   ArrayList<Skill> skills;
   String name;
   int health, basicSkillCapacity, manna, numBasic, frameStart;
@@ -23,11 +22,57 @@ class Fighter implements FighterActions {
     frameStart = 120;
   }
 
-
-
   Fighter(String name, int health, int basicSkillCapacity, int manna, PVector movSpeed, PVector position, PVector size, PImage aspect, boolean location) {
     this(name, health, basicSkillCapacity, manna, movSpeed, position, size, aspect);
     this.location = location;
+  }
+
+  void setNameFighter(String name) {
+    this.name = name;
+  }
+
+  String getNameFighter() {
+    return name;
+  }
+
+  void setHealth(int health) {
+    this.health = health;
+  }
+
+  int getHealth () {
+    return health;
+  }
+
+  void setManna(int manna) {
+    this.manna= manna;
+  }
+
+  int getManna() {
+    return manna;
+  }
+
+  void setPosition (PVector position) {
+    this.position = position;
+  }
+
+  PVector getPosition() {
+    return position;
+  }
+
+  void setAspect(PImage aspect) {
+    this.aspect = aspect;
+  }
+
+  PImage getAspect() {
+    return aspect;
+  }
+
+  void setSize (PVector size) {
+    this.size = size;
+  }
+
+  PVector getSize() {
+    return size;
   }
 
   void setBasicSkill(Skill skill) {
@@ -39,52 +84,10 @@ class Fighter implements FighterActions {
     }
   }
 
-  void setNameFighter(String name) {
-    this.name = name;
-  }
-
-  String getNameFighter() {
-    return name;
-  }
-    void setAspcerFighter(PImage aspect) {
-    this.aspect = aspect;
-  }
-
-  PImage getAspecFighter() {
-    return aspect;
-  }
-
-  void setHealth(int health) {
-    this.health = health;
-  }
-
-  int getHealth () {
-    return health;
-  }
-
-  void setPosition (PVector position) {
-    this.position = position;
-  }
-
-  PVector getPosition() {
-    return position;
-  }
-
-  void setSize (PVector size) {
-    this.size = size;
-  }
-
-  PVector getSize() {
-    return size;
-  }
-
   void addManna(int cant) {
     if (manna < 10) {
       manna += cant;
     }
-  }
-  int getManna() {
-    return manna;
   }
 
   void restManna(int cant) {
@@ -112,16 +115,15 @@ class Fighter implements FighterActions {
   void displayMannaLevel() {
     fill(255);
     if (location) {
-    rect(position.x, 30, 196, 30);
-    }else{
-    rect(position.x+5, 30, 196, 30);
+      rect(position.x, 30, 196, 30);
+    } else {
+      rect(position.x+5, 30, 196, 30);
     }
     for (int i=1; i <= manna; i++) {
       stroke(100);
       fill(#29B2D6);
       if (location) {
         rect((position.x-i*20)+196, 30, 20, 30);
-        
       } else {
         rect((position.x+i*20)-15, 30, 20, 30);
       }
@@ -129,9 +131,9 @@ class Fighter implements FighterActions {
   }
 
   void displayHealth() {
-        stroke(50);
+    stroke(50);
     fill(0);
-    if (!location){
+    if (!location) {
       rect(0, 10, 300, 20);
     } else {
       rect(1000, 10, 300, 20);
@@ -152,7 +154,7 @@ class Fighter implements FighterActions {
       } else if (i<health/2) {
         fill(verde1);
       }
-      if (!location){
+      if (!location) {
         rect (4 * i, 10, 3, 20);
       } else {
         rect (1300 + 4 * -i, 10, 3, 20);
@@ -198,8 +200,8 @@ class Fighter implements FighterActions {
   void shootSpecial() {
     boolean a = (frameCount > frameStart + 60);
     if (a) {
-      if(numBasic==  0) {
-    
+      if (numBasic==  0) {
+
         shootSpecial(3);
         numBasic = 0;
         frameStart = frameCount ;
@@ -209,27 +211,26 @@ class Fighter implements FighterActions {
   void shootSpecial(PImage b) {
     boolean a = (frameCount > frameStart + 60);
     if (a) {
-      if(numBasic== 0) {
-        Specialgetsbetter(1);
+      if (numBasic== 0) {
+        upgrade(1);
         numBasic = 0;
         frameStart = frameCount ;
       }
     }
   }
-  void Specialgetsbetter(int i) {
-    
+  void upgrade(int i) {
   }
-  
-void shootSpecial(int i) {
-    
-  PVector a = new PVector(0, 0);
+
+  void shootSpecial(int i) {
+
+    PVector a = new PVector(0, 0);
     a.y = position.y;
     a.x = position.x-25;
     skills.get(i).setPosition(a);
     restManna(skills.get(3).getEnergyCost());
-      }
-    
-  
+  }
+
+
   void shoot(int i) {
     PVector a = new PVector(0, 0);
     a.y = position.y;

@@ -14,28 +14,6 @@ abstract class Skill {
     this.movSpeed = movSpeed;
     this.position = position;
     this.size = size;
-    
-  }
-
-  void init() {
-    notShow = false;
-    display();
-    move();
-  }
-
-  void display() {
-    if (!(this.position.x > width - (this.size.x/1.55)+50)) {
-      image(this.aspect, position.x, position.y, this.size.x, this.size.y);
-    }
-    if (!(this.position.x < 50)) {
-      image(this.aspect, position.x, position.y, this.size.x, this.size.y);
-    }
-  }
-
-
-
-  void move () {
-    this.position.x = this.position.x+this.movSpeed.x;
   }
 
   public PVector getMovSpeed() {
@@ -73,14 +51,51 @@ abstract class Skill {
     return energyCost;
   }
 
+  public void setEnergyCost(int energyCost) {
+    this.energyCost = energyCost;
+  }
+
   public int getDamage() {
     return damage;
   }
-  
-    public void setNotShow() {
+
+  public void setDamage(int damage) {
+    this.damage = damage;
   }
-  
+
+  public String getNameSkill() {
+    return name;
+  }
+
+  public void setNameSkill(String name) {
+    this.name = name;
+  }
+
+  public void setNotShow() {
+  }
+
   public boolean getNotShow() {
     return notShow;
+  }
+
+  void init() {
+    notShow = false;
+    display();
+    move();
+  }
+
+  void display() {
+    if (!(this.position.x > width - (this.size.x/1.55)+50)) {
+      image(this.aspect, position.x, position.y, this.size.x, this.size.y);
+    }
+    if (!(this.position.x < 50)) {
+      image(this.aspect, position.x, position.y, this.size.x, this.size.y);
+    }
+  }
+
+
+
+  void move () {
+    this.position.x = this.position.x+this.movSpeed.x;
   }
 } 

@@ -6,10 +6,19 @@ class GameMenu {
   GameMenu() {
   }
 
+  public void setFighterLeft(Fighter fighterLeft) {
+    this.fighterLeft = fighterLeft;
+  }
+
+  void setFighterRight(Fighter fighterRight) {
+    this.fighterRight = fighterRight;
+  }
+
   void runGameMenu(int gameMenuPage) {
-    image(gameMenuBack[0], 0, 0, width, height);
+    image(gameMenuBackground[0], 0, 0, width, height);
     switch (gameMenuPage) {
     case 0:
+      gameMenuButtons.get(0).display();
       if (fighterLeft == null && fighterRight == null) {
         fighterLeft = new Fighter ("kris", 150, 3, 0, new PVector(0, 10), new PVector(0, height/2-250/1.55), new PVector(250/1.55, 250/1.55), fighter1);
         fighterRight = new Fighter ("kris", 150, 3, 0, new PVector(0, 10), new PVector(1100, height/2-250/1.55), new PVector(250/1.55, 250/1.55), fighter12, true);
@@ -17,14 +26,21 @@ class GameMenu {
         fighterRight.setBasicSkill(new BasicSkill("daga", 5, 1, new PVector(-25, 0), new PVector(1000, 1000), new PVector(250/1.55, 250/1.55), fighter12Basic));
         fighterLeft.setSkill(new SpecialSkill("onda de fuego", 15, 5, new PVector(35, 0), new PVector(1000, 1000), new PVector(350/1.55, 650/1.55), fighter1Special1));
         fighterRight.setSkill(new SpecialSkill("onda de fuego", 15, 5, new PVector(-35, 0), new PVector(1000, 1000), new PVector(350/1.55, 650/1.55), fighter12Special1));
-        fighterLeft.setSkill(new SpecialSkill("escudo", 0, 4, new PVector(0, 0), new PVector(1000, 1000), new PVector(250/1.55, 250/1.55),  fighter1Special2));
-        fighterRight.setSkill(new SpecialSkill("escudo", 0, 4, new PVector(0, 0), new PVector(1000, 1000), new PVector(250/1.55, 250/1.55),  fighter12Special2));
+        fighterLeft.setSkill(new SpecialSkill("escudo", 0, 4, new PVector(0, 0), new PVector(1000, 1000), new PVector(250/1.55, 250/1.55), fighter1Special2));
+        fighterRight.setSkill(new SpecialSkill("escudo", 0, 4, new PVector(0, 0), new PVector(1000, 1000), new PVector(250/1.55, 250/1.55), fighter12Special2));
       }
-
       fighterRight.init();
       fighterLeft.init();
       displayManna();
       damageDone();     
+      break;
+
+    case 1:
+      image(gameMenuBackground[0], 0, 0, width, height);
+      image(optionsBackground, 300, 100, 700, 500);
+      for (int i = 1; i < 4; i++) {
+        gameMenuButtons.get(i).display();
+      }
       break;
     }
   }
@@ -85,18 +101,18 @@ class GameMenu {
         fighterLeft.changeDirec();
         break;
       case 's':
-        if(fighterLeft.skills.get(1).getEnergyCost()<fighterLeft.getManna()+1){
-        fighterLeft.shootBasic();
+        if (fighterLeft.skills.get(1).getEnergyCost()<fighterLeft.getManna()+1) {
+          fighterLeft.shootBasic();
         }
         break;
-        case 'd':
-        if(fighterLeft.skills.get(3).getEnergyCost()<fighterLeft.getManna()+1){
-        fighterLeft.shootSpecial();
+      case 'd':
+        if (fighterLeft.skills.get(3).getEnergyCost()<fighterLeft.getManna()+1) {
+          fighterLeft.shootSpecial();
         }
         break;
-        case 'w':
-        if(fighterLeft.skills.get(4).getEnergyCost()<fighterLeft.getManna()+1){
-        fighterLeft.shootSpecial(fighterLeft.skills.get(4).getAspect());
+      case 'w':
+        if (fighterLeft.skills.get(4).getEnergyCost()<fighterLeft.getManna()+1) {
+          fighterLeft.shootSpecial(fighterLeft.skills.get(4).getAspect());
         }
         break;
 
@@ -105,19 +121,19 @@ class GameMenu {
         fighterRight.changeDirec();
         break;
       case 'k':
-        if(fighterRight.skills.get(1).getEnergyCost()<fighterRight.getManna()+1){
-        fighterRight.shootBasic();
+        if (fighterRight.skills.get(1).getEnergyCost()<fighterRight.getManna()+1) {
+          fighterRight.shootBasic();
         }
-        
+
         break;
-        case 'i':
-        if(fighterRight.skills.get(3).getEnergyCost()<fighterRight.getManna()+1){
-        fighterRight.shootSpecial();
+      case 'i':
+        if (fighterRight.skills.get(3).getEnergyCost()<fighterRight.getManna()+1) {
+          fighterRight.shootSpecial();
         }
         break;
-        case 'j':
-        if(fighterRight.skills.get(4).getEnergyCost()<fighterRight.getManna()+1){
-        //fighterRight.shootSpecial(true);
+      case 'j':
+        if (fighterRight.skills.get(4).getEnergyCost()<fighterRight.getManna()+1) {
+          //fighterRight.shootSpecial(true);
         }
 
         break;
@@ -128,7 +144,6 @@ class GameMenu {
       setupMenu.runSetupMenu(setupMenuPage);
       fighterLeft = null;
       fighterRight = null;
-
 
       break;
     case 2:

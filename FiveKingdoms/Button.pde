@@ -50,7 +50,7 @@ class Button {
       this.display();
     }
   }
-  
+
   //Verifica si el cursor esta dentro del boton
   boolean isInside() {
     return isHovering = mouseX > (posX-w/2)*width/width & mouseX < (posX+w/2)*width/width &

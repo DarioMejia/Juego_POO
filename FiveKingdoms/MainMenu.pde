@@ -16,6 +16,7 @@ class MainMenu {
       }
       break;
     case 1:
+      image(mainMenuBackground, 0, 0, width, height);
       image(instructionsBackground, 300, 100, 700, 500);
       mainMenuButtons.get(3).display();
       break;
