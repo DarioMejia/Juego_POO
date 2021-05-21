@@ -14,6 +14,7 @@ abstract class Skill {
     this.movSpeed = movSpeed;
     this.position = position;
     this.size = size;
+    
   }
 
   void init() {
@@ -43,6 +44,13 @@ abstract class Skill {
 
   public void setMovSpeed(PVector movSpeed) {
     this.movSpeed = movSpeed;
+  }
+  public PImage getAspect() {
+    return aspect;
+  }
+
+  public void setAspect(PImage aspect) {
+    this.aspect = aspect;
   }
 
   public PVector getPosition() {

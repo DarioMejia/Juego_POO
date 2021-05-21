@@ -22,8 +22,7 @@ class BasicSkill extends Skill {
   void display() {
      if (((this.position.x > width - this.size.x/1.55)||(this.position.x < -50 )) | notShow) {
        notShow = false;
-       this.position.x=9000;
-       this.position.y=9000;
+       
     } else {
       image(this.aspect, this.position.x, this.position.y, this.size.x, this.size.y);
     }
