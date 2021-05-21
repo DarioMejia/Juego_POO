@@ -211,13 +211,12 @@ class Fighter implements FighterActions {
   void shootSpecial(PImage aspect) {
     boolean a = (frameCount > frameStart + 60);
     if (a) {
-      if (numBasic== 0) {
-        upgrade(aspect);
-        numBasic = 0;
-        frameStart = frameCount ;
-      }
+      upgrade(aspect);
+      numBasic = 0;
+      frameStart = frameCount ;
     }
   }
+
   void upgrade(PImage aspect) {
     PImage aux;
     aux = this.aspect;
@@ -227,7 +226,8 @@ class Fighter implements FighterActions {
       numBasic = 1;
       frameStart = frameCount ;
     } else {
-      this.aspect = aux;;
+      this.aspect = aux;
+      ;
     }
     restManna(skills.get(4).getEnergyCost());
   }
