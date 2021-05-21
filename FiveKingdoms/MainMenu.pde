@@ -33,7 +33,6 @@ class MainMenu {
       crawl = "        Five Kingdoms\n\n       POO\n\n       Diseñadores\n\n       Edward Morales\n       Santiago Carbal\n\n       Programadores\n\n       Dario Mejia\n       Michelle Polo\n\n\n\n       Alejandro Salas";
     }
     speed = map(15, 0, width, 0, 50);
-
     background(0);
     mainMenuButtons.get(3).display();
     translate(width/2, height/2);
@@ -42,9 +41,10 @@ class MainMenu {
       stars[i].show();
     }
     fill(255, 255, 0);
+    rotateX(PI/3.0);
     translate(0, height);
     textSize(80);
-    text(crawl, 300, textY, -800, 3000);
+    text(crawl, 300, textY, -800, 3100);
     textY -= 2;
   }
 

@@ -6,7 +6,7 @@ public class Data {
   public Data() {    
     //General
     mouse = loadImage("data/mouse.png");
-    cursor(mouse, mouseX, mouseY);
+    cursor(HAND);
 
     //Data mainMenu
     title = loadImage("data/titulo.png");

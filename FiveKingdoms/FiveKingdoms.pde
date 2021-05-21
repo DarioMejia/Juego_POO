@@ -8,13 +8,12 @@ SetupMenu setupMenu;
 GameMenu gameMenu;
 
 void setup() {
-  size(1300, 700);
-  surface.setLocation(CENTER, CENTER);
+  size(1300, 700, P3D);
   data = new Data();
 }
 
 void draw() {
-  frameRate(600);
+  //frameRate(60);
   switch(generalPage) {
   case 0:
     mainMenu();
