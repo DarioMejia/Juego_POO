@@ -31,7 +31,7 @@ public class Data {
     shield = loadImage("data/shield.png");
     fight = loadImage("data/fight.png");
     setupMenuButtons = new ArrayList<Button>();
-    setupMenuButtons.add(new Button("", 20, 1240, height-65, 100, 110, start, start2));
+    setupMenuButtons.add(new Button("", 20, width/2, height/2+200, 135, 155, start, start2));
     setupMenuButtons.add(new Button("", 20, 65, height-35, 75, 50, returnButton, returnButton2));
 
     //Data gameMenu
